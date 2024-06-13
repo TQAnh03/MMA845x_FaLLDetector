@@ -1,0 +1,81 @@
+Dependencies for Project 'Test', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARM_Compiler_5.06u7
+F (.\main.c)(0x666AA946)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\STM32F103C8-I.\RTE\_Target_1-IC:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Legion\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (Lib.h)(0x666A06A0)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x65FDCB3A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x6669E3FD)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F58EE)
+I (D:\Legion\ARM\ARM_Compiler_5.06u7\include\stdint.h)(0x5E8E4AD2)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F58EE)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x65FDCB3A)
+I (I2C.h)(0x6669E965)
+I (D:\Legion\ARM\ARM_Compiler_5.06u7\include\stdio.h)(0x5E8E4AD2)
+I (Delay.h)(0x6669E4FF)
+I (LCD.h)(0x6669E4B9)
+I (D:\Legion\ARM\ARM_Compiler_5.06u7\include\Math.h)(0x5E8E4AD2)
+I (D:\Legion\ARM\ARM_Compiler_5.06u7\include\stdbool.h)(0x5E8E4AD2)
+F (.\I2C.c)(0x6669E965)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\STM32F103C8-I.\RTE\_Target_1-IC:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Legion\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o .\objects\i2c.o --omf_browse .\objects\i2c.crf --depend .\objects\i2c.d)
+I (Lib.h)(0x666A06A0)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x65FDCB3A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x6669E3FD)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F58EE)
+I (D:\Legion\ARM\ARM_Compiler_5.06u7\include\stdint.h)(0x5E8E4AD2)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F58EE)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x65FDCB3A)
+I (I2C.h)(0x6669E965)
+I (D:\Legion\ARM\ARM_Compiler_5.06u7\include\stdio.h)(0x5E8E4AD2)
+I (Delay.h)(0x6669E4FF)
+I (LCD.h)(0x6669E4B9)
+I (D:\Legion\ARM\ARM_Compiler_5.06u7\include\Math.h)(0x5E8E4AD2)
+I (D:\Legion\ARM\ARM_Compiler_5.06u7\include\stdbool.h)(0x5E8E4AD2)
+F (.\I2C.h)(0x6669E965)()
+F (.\Delay.c)(0x6669E45F)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\STM32F103C8-I.\RTE\_Target_1-IC:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Legion\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o .\objects\delay.o --omf_browse .\objects\delay.crf --depend .\objects\delay.d)
+I (Lib.h)(0x666A06A0)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x65FDCB3A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x6669E3FD)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F58EE)
+I (D:\Legion\ARM\ARM_Compiler_5.06u7\include\stdint.h)(0x5E8E4AD2)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F58EE)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x65FDCB3A)
+I (I2C.h)(0x6669E965)
+I (D:\Legion\ARM\ARM_Compiler_5.06u7\include\stdio.h)(0x5E8E4AD2)
+I (Delay.h)(0x6669E4FF)
+I (LCD.h)(0x6669E4B9)
+I (D:\Legion\ARM\ARM_Compiler_5.06u7\include\Math.h)(0x5E8E4AD2)
+I (D:\Legion\ARM\ARM_Compiler_5.06u7\include\stdbool.h)(0x5E8E4AD2)
+F (.\Delay.h)(0x6669E4FF)()
+F (.\LCD.c)(0x6669E4E0)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\STM32F103C8-I.\RTE\_Target_1-IC:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Legion\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o .\objects\lcd.o --omf_browse .\objects\lcd.crf --depend .\objects\lcd.d)
+I (Lib.h)(0x666A06A0)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x65FDCB3A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x6669E3FD)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F58EE)
+I (D:\Legion\ARM\ARM_Compiler_5.06u7\include\stdint.h)(0x5E8E4AD2)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F58EE)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x65FDCB3A)
+I (I2C.h)(0x6669E965)
+I (D:\Legion\ARM\ARM_Compiler_5.06u7\include\stdio.h)(0x5E8E4AD2)
+I (Delay.h)(0x6669E4FF)
+I (LCD.h)(0x6669E4B9)
+I (D:\Legion\ARM\ARM_Compiler_5.06u7\include\Math.h)(0x5E8E4AD2)
+I (D:\Legion\ARM\ARM_Compiler_5.06u7\include\stdbool.h)(0x5E8E4AD2)
+F (.\LCD.h)(0x6669E4B9)()
+F (.\Lib.h)(0x666A06A0)()
+F (RTE/Device/STM32F103C8/RTE_Device.h)(0x65FDCB3B)()
+F (RTE/Device/STM32F103C8/startup_stm32f10x_md.s)(0x65FDCB3A)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\Device\STM32F103C8-I.\RTE\_Target_1-IC:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Legion\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include--pd "__UVISION_VERSION SETA 539" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1" --pd "_RTE_ SETA 1"--list .\listings\startup_stm32f10x_md.lst --xref -o .\objects\startup_stm32f10x_md.o --depend .\objects\startup_stm32f10x_md.d)
+F (RTE/Device/STM32F103C8/system_stm32f10x.c)(0x65FDCB3A)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\STM32F103C8-I.\RTE\_Target_1-IC:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Legion\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o .\objects\system_stm32f10x.o --omf_browse .\objects\system_stm32f10x.crf --depend .\objects\system_stm32f10x.d)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x65FDCB3A)
+I (.\RTE\_Target_1\RTE_Components.h)(0x6669E3FD)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F58EE)
+I (D:\Legion\ARM\ARM_Compiler_5.06u7\include\stdint.h)(0x5E8E4AD2)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F58EE)
+I (C:\Users\Legion\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x65FDCB3A)

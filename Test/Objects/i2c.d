@@ -1,0 +1,16 @@
+.\objects\i2c.o: I2C.c
+.\objects\i2c.o: Lib.h
+.\objects\i2c.o: C:\Users\Legion\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h
+.\objects\i2c.o: .\RTE\_Target_1\RTE_Components.h
+.\objects\i2c.o: C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h
+.\objects\i2c.o: D:\Legion\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdint.h
+.\objects\i2c.o: C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\i2c.o: C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\i2c.o: C:\Users\Legion\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\i2c.o: C:\Users\Legion\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h
+.\objects\i2c.o: I2C.h
+.\objects\i2c.o: D:\Legion\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdio.h
+.\objects\i2c.o: Delay.h
+.\objects\i2c.o: LCD.h
+.\objects\i2c.o: D:\Legion\ARM\ARM_Compiler_5.06u7\Bin\..\include\Math.h
+.\objects\i2c.o: D:\Legion\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdbool.h
