@@ -33,8 +33,7 @@ int main(void)
 	lcd_clear();
 	lcd_put_cur (0,0);
 	lcd_send_string ("hello1");
-	lcd_put_cur (1,0);
-	lcd_send_string ("hello2");
+	
 	I2C_WriteData(MMA_ADDR,0x2B,0x40);//devide software reset
 	Delay_ms(1000);
 	I2C_WriteData(MMA_ADDR,0x2A,0x00);// devide stanby mode
@@ -43,9 +42,10 @@ int main(void)
 	while (1)
 	{
 		
-		Delay_ms(500);
+		Delay_ms(400);
 		if (systemState)
 		{
+			
 			I2C_ReadData(MMA_ADDR,0x01,buffer,6);
 			x = (int16_t) (buffer[0]<<8 | buffer[1]);
 			y = (int16_t) (buffer[2]<<8 | buffer[3]);
@@ -53,15 +53,18 @@ int main(void)
 			ax = (float) (x*x);
 			ay = (float) (y*y);
 			az = (float) (z*z);
-			a= (float)sqrt(ax + ay + az) /16384;
-			if( a >=2 ) {
+			a= (float)sqrt(ax + ay + az) /16384 *9.8;
+			if( a <=7) {
 				fall = true;
 			}
-			lcd_clear();
-			sprintf(buf,"Fall = %d",fall);
-			
+			ax = ((float) x) /16384 *9.81;
+			ay = ((float) y)/16384 *9.81;
+			az= ((float)z)/16384 *9.81;
+			sprintf(buf,"Fall %d",fall);
 			lcd_put_cur(0,0);
 			lcd_send_string(buf);
+			
+			
 			
 		}
 		if (systemReset)
@@ -128,6 +131,7 @@ void EXTI_Config()
 	AFIO->EXTICR[0] |= AFIO_EXTICR1_EXTI0_PA; // Chân PA0 làm nguôn ngat cho EXTI0
 	EXTI->IMR |= EXTI_IMR_MR0; // Kích ho?t mask cho dòng ng?t 0
 	EXTI->FTSR |= EXTI_FTSR_TR0; // C?u hình ng?t theo c?nh xu?ng
+	NVIC_SetPriority(EXTI0_IRQn,0);
 	NVIC_EnableIRQ(EXTI0_IRQn); // Kích ho?t ng?t trong NVIC
 
 	// C?u hình External Interrupt cho PA1 (EXTI1)
@@ -135,6 +139,7 @@ void EXTI_Config()
 	AFIO->EXTICR[0] |= AFIO_EXTICR1_EXTI1_PA; // Ch?n PA1 làm ngu?n ng?t cho EXTI1
 	EXTI->IMR |= EXTI_IMR_MR1; // Kích ho?t mask cho dòng ng?t 1
 	EXTI->FTSR |= EXTI_FTSR_TR1; // C?u hình ng?t theo c?nh xu?ng
+	NVIC_SetPriority(EXTI1_IRQn,1);
 	NVIC_EnableIRQ(EXTI1_IRQn); // Kích ho?t ng?t trong NVIC
 }
 void SysTick_Handler(void) {
@@ -148,18 +153,18 @@ void SysTick_Handler(void) {
 		{ 
 			ticksB0 = 0;
       GPIOB->ODR ^= GPIO_ODR_ODR0; 
-
+			
     } else if (systemState ==0) {
 			GPIOB->ODR &= ~(1<<0);
 		}
-  		if ((++ticksB1 >= 500) & (fall)) 
+  	if ((++ticksB1 >= 500) & (fall)) 
 		{ 
 			ticksB1 = 0;
 			GPIOB->ODR ^= GPIO_ODR_ODR1; 
 		}
 		else if (!fall) {
 			GPIOB->ODR &= ~(1<<1);
-		}
+		}	
 		
 
     
