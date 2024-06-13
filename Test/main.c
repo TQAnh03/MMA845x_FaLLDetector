@@ -36,35 +36,27 @@ int main(void)
 	lcd_put_cur (1,0);
 	lcd_send_string ("hello2");
 	I2C_WriteData(MMA_ADDR,0x2B,0x40);//devide software reset
-	Delay_ms(1000);// wait to reset
-	I2C_WriteData(MMA_ADDR,0x0E,0x00); // scale +/-2g -> 1g = 16384/4 = 4096 count
-	I2C_WriteData(MMA_ADDR,0x2B,0x02); // high resolution mode
-	I2C_WriteData(MMA_ADDR,0x15,0x38); // freefall flags va freefall detection for x y z
-	I2C_WriteData(MMA_ADDR,0x17,0x04);// Threshold Setting Value for the Freefall detection of  0.2g (4 * 0.063)
-	I2C_WriteData(MMA_ADDR,0x18,0x20);// Set the debounce counter to 80 ms timer 
-	
-//	I2C_WriteData(MMA_ADDR,0x2A,0x00);// devide stanby mode
-//	I2C_WriteData(MMA_ADDR,0x2D,0x01); //enable drdy interrupt
-	I2C_WriteData(MMA_ADDR,0x2D,0x04); // Enable Motion/Freefall Interrupt
-	I2C_WriteData(MMA_ADDR,0x2E,0x04);// Freefall interrupt routed to INT1
-	I2C_WriteData(MMA_ADDR,0x2A,0x19); //enable device / chuyen sang active mode odr 100hz
+	Delay_ms(1000);
+	I2C_WriteData(MMA_ADDR,0x2A,0x00);// devide stanby mode
+	I2C_WriteData(MMA_ADDR,0x2D,0x01); //enable drdy interrupt
+	I2C_WriteData(MMA_ADDR,0x2A,0x01); //enable device
 	while (1)
 	{
 		
 		Delay_ms(500);
 		if (systemState)
 		{
-//			I2C_ReadData(MMA_ADDR,0x01,buffer,6);
-//			x = (int16_t) (buffer[0]<<8 | buffer[1]);
-//			y = (int16_t) (buffer[2]<<8 | buffer[3]);
-//			z = (int16_t) (buffer[4]<<8 | buffer[5]);
-//			ax = (float) (x*x);
-//			ay = (float) (y*y);
-//			az = (float) (z*z);
-//			a= (float)sqrt(ax + ay + az) /16384;
-//			if( a >=2 ) {
-//				fall = true;
-//			}
+			I2C_ReadData(MMA_ADDR,0x01,buffer,6);
+			x = (int16_t) (buffer[0]<<8 | buffer[1]);
+			y = (int16_t) (buffer[2]<<8 | buffer[3]);
+			z = (int16_t) (buffer[4]<<8 | buffer[5]);
+			ax = (float) (x*x);
+			ay = (float) (y*y);
+			az = (float) (z*z);
+			a= (float)sqrt(ax + ay + az) /16384;
+			if( a >=2 ) {
+				fall = true;
+			}
 			lcd_clear();
 			sprintf(buf,"Fall = %d",fall);
 			
@@ -121,15 +113,11 @@ void LED_Init() {
 void Switch_Init() {
 	RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
 	
-	// Cau hinh PA0 PA1  la input pull up 
+	// Cau hinh PA0 PA1 la input pull up
   GPIOA->CRL &= ~0x0FF; // Reset
   GPIOA->CRL |= GPIO_CRL_CNF0_1; // Input pull up
   GPIOA->CRL |= GPIO_CRL_CNF1_1; // Input pull up
 	GPIOA->ODR |= GPIO_ODR_ODR0 | GPIO_ODR_ODR1; 
-	
-	GPIOA->CRL &= ~(GPIO_CRL_MODE2); // Clear mode bits for PA2
-  GPIOA->CRL &= ~(GPIO_CRL_CNF2_0); // Clear CNF2_0 bit for PA2
-  GPIOA->CRL |= (GPIO_CRL_CNF2_1);
 }
 void EXTI_Config()
 {
@@ -139,22 +127,15 @@ void EXTI_Config()
 	AFIO->EXTICR[0] &= ~AFIO_EXTICR1_EXTI0; // Xóa các thiet lap cu
 	AFIO->EXTICR[0] |= AFIO_EXTICR1_EXTI0_PA; // Chân PA0 làm nguôn ngat cho EXTI0
 	EXTI->IMR |= EXTI_IMR_MR0; // Kích ho?t mask cho dòng ng?t 0
-	EXTI->FTSR |= EXTI_FTSR_TR0; // C?u hình ng?t theo canh xuong
+	EXTI->FTSR |= EXTI_FTSR_TR0; // C?u hình ng?t theo c?nh xu?ng
 	NVIC_EnableIRQ(EXTI0_IRQn); // Kích ho?t ng?t trong NVIC
 
 	// C?u hình External Interrupt cho PA1 (EXTI1)
-	AFIO->EXTICR[0] &= ~AFIO_EXTICR1_EXTI1; // Xóa các thiet lap cu
-	AFIO->EXTICR[0] |= AFIO_EXTICR1_EXTI1_PA; // Chan PA1 làm nguon ngat cho EXTI1
-	EXTI->IMR |= EXTI_IMR_MR1; // Kích hoat mask cho dòng ngat 1
-	EXTI->FTSR |= EXTI_FTSR_TR1; // Cau hình ngat theo canh xuong
-	NVIC_EnableIRQ(EXTI1_IRQn); // Kích hoat ngat trong NVIC
-	
-	//Cau hinh external Interrupt cho PA2 (EXTI2)
 	AFIO->EXTICR[0] &= ~AFIO_EXTICR1_EXTI1; // Xóa các thi?t l?p cu
-	AFIO->EXTICR[0] |= AFIO_EXTICR1_EXTI2_PA; // Ch?n PA2 làm ngu?n ng?t cho EXTI2
-	EXTI->IMR |= EXTI_IMR_MR2; // Kích hoat mask cho dòng ngat 2
-	EXTI->FTSR |= EXTI_FTSR_TR2; // Cau hình ngat theo canh xuong
-	NVIC_EnableIRQ(EXTI2_IRQn); // Kích hoat ngat trong NVIC
+	AFIO->EXTICR[0] |= AFIO_EXTICR1_EXTI1_PA; // Ch?n PA1 làm ngu?n ng?t cho EXTI1
+	EXTI->IMR |= EXTI_IMR_MR1; // Kích ho?t mask cho dòng ng?t 1
+	EXTI->FTSR |= EXTI_FTSR_TR1; // C?u hình ng?t theo c?nh xu?ng
+	NVIC_EnableIRQ(EXTI1_IRQn); // Kích ho?t ng?t trong NVIC
 }
 void SysTick_Handler(void) {
     static uint32_t ticksB0 = 0;
@@ -193,10 +174,4 @@ void EXTI0_IRQHandler(void)//switch state
 {
 	EXTI->PR |= EXTI_PR_PR0;
 	systemState = !systemState;
-}
-
-void EXTI2_IRQHandler(void) {
-    
-	EXTI->PR |= EXTI_PR_PR2;     // Xóa c? ng?t EXTI2
-  fall = true;  
 }
